@@ -9,23 +9,56 @@
   <title>Beelieve</title>
   <link rel='stylesheet' id='sage/main.css-css' href="<?php bloginfo('template_directory') ?>/style.css" type='text/css' media='all' />
   <link rel='stylesheet' href="<?php bloginfo('template_directory') ?>/myStyle.css" type='text/css' />
-  <script async defer type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=explicit'></script>
-  <script async defer type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=explicit'></script>
+  
   <script type='text/javascript'>
     function setImageService(src) {
         let img = document.getElementsByClassName("img-service")[0];
         img.style.backgroundImage = `url(${src})`
         img.classList.toggle("imgA")
         img.classList.toggle("imgB")
-      }
-    </script>
+    }
+
+    function togleMenu() {
+      let content = document.getElementById("content-menu");
+      content.classList.toggle("content-menu-active")
+    }
+  </script>
 </head>
 
 <body class="home page app-data index-data singular-data page-data page-2-data page-front-page-data front-page-data">
   <div class="main-logo">
     Beelieve
   </div>
-  <!-- <div class="c-preloader">
+  <div class="nav-destop"> 
+    <div id="content-menu" class="content" >
+      <ul>
+        <li><a href="#home" class="no-transition js-scrollto" data-offset="60">Home</a></li>
+        <li href="#our_service" class="item no-transition js-scrollto" data-offset="60">Our services</li>
+        <li href="#contact" class="item no-transition js-scrollto" data-offset="60">Contact Us</li>
+        <li><a href="#">News / Events</a></li>
+        <li><a href="#">Our Work</a></li>
+      </ul>
+      <div class="contact">
+        <div class="d-flex mx-2">
+          <img src="<?php bloginfo('template_directory') ?>/images/svg/page3/iconCall.svg" width="30" height="30"/>
+          <b>028 6288 3088</b> 
+          <a style="margin-left: 80px" href="#"><img src="<?php bloginfo('template_directory') ?>/images/svg/page3/iconFB.svg" width="30" height="30"/></a>
+        </div>
+        <br/>
+        <div class="ml-2">
+          <img src="<?php bloginfo('template_directory') ?>/images/svg/page3/iconEmail.svg" width="30" height="30"/>
+          <b>hello@beelieve.vn</b>
+          <a style="margin-left: 50px" href="#"><img src="<?php bloginfo('template_directory') ?>/images/svg/page3/iconTele.svg" width="30" height="30"/></a>
+        </div>
+      </div>
+    </div>
+    <div class="menu">
+      <div class="text">Beelieve</div>
+      <div class="btn" onclick="togleMenu()"></div>
+    </div>
+  </div>
+
+  <div class="c-preloader">
     <div class="c-preloader_anim" data-module="Preloader">
       <center style="margin-top: 40vh;">
         <svg width="198" height="149" viewBox="0 0 278 209" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +93,7 @@
     <div class="c-preloader_logo">
      
     </div>
-  </div> -->
+  </div>
 
   <!-- <div class="c-popup" data-module="Popup">
     <div class="c-popup_background js-close"></div>
@@ -75,21 +108,21 @@
   <div id="js-pjax-wrapper">
     <div class="js-pjax-container waveWrapper waveAnimation" data-template="home">
       <div class="waveWrapperInner bgTop">
-        <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')">
+        <div class="wave waveTop" style="background-image: url('<?php bloginfo('template_directory') ?>/images/wave-top.png')">
         </div>
       </div>
       <div class="waveWrapperInner bgMiddle">
-        <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')">
+        <div class="wave waveMiddle" style="background-image: url('<?php bloginfo('template_directory') ?>/images/wave-mid.png')">
         </div>
       </div>
       <div class="waveWrapperInner bgBottom">
-        <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')">
+        <div class="wave waveBottom" style="background-image: url('<?php bloginfo('template_directory') ?>/images/wave-bot.png')">
         </div>
       </div>
 
       <div class="o-scroll" data-horizontal data-module="Scroll">
         <!-- Menu -->
-        <div class="o-scroll_section c-header_wrapper">
+        <div class="nav-mobile o-scroll_section c-header_wrapper d-none">
           <span class="c-header_trigger js-animate menu-custom" data-callback="trigger.Header()" data-repeat></span>
           <header class="c-header js-header">
             <ul class="c-header_menu">
@@ -159,6 +192,9 @@
             <button class="c-header_burger u-none@from-small" type="button" data-module="NavButton"></button>
           </header>
         </div>
+
+        
+
         <div class="o-scroll_section">
           <section class="c-home-intro item-1" id="home">
             <div class="img img-main" ></div>
@@ -168,7 +204,7 @@
               <a href="#about" class="no-transition js-scrollto" data-offset="60">
                 <div class="wrap btn-scroll">
                   <div class="btn"></div>
-                  <b>Scroll</b>
+                  <b >Scroll</b>
                 </div>
               </a>
             </div>
@@ -201,7 +237,7 @@
                 of industries and sectors. We build digital products for amazing innovators, scalable businesses and
                 everything in between</div>
             </div>
-            <div class="wrap2">
+            <div class="wrap2 row">
               <div class="item to-top">
                 <img src="<?php bloginfo('template_directory') ?>/images/svg/page3/customer-service.svg" width="100%" height="100%" />
                 <p class="name">Customer Service</p>
@@ -233,7 +269,6 @@
             <div class="wrap">
               <div class="wrap1 to-right">
                 <h2>Our service</h2>
-                <p>We provide support your business.</p>
               </div>
               <div class="wrap2 to-left">
                 <ul>
@@ -296,13 +331,12 @@
     var hoverDistort = new hoverEffect({
       parent: document.querySelector('.img-main'),
       intensity: 0.5,
-      image1: 'images/svg/page3/sv2.jpg',
-      image2: 'images/svg/page3/sv3.jpg',
-      displacementImage: 'images/svg/page3/hinhtong.svg'
+      image1: '<?php bloginfo('template_directory') ?>/images/svg/page3/sv2.jpg',
+      image2: '<?php bloginfo('template_directory') ?>/images/svg/page3/sv3.jpg',
+      displacementImage: '<?php bloginfo('template_directory') ?>/images/svg/page3/hinhtong.svg'
     });
   </script>
   <script type='text/javascript' src='<?php bloginfo('template_directory') ?>/js/app.js'></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </body>
 
 </html>

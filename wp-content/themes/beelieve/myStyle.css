@@ -33,6 +33,11 @@ body {
 }
 
 /*menu*/
+.nav-mobile {
+  display: none;
+  background-color: #2456B9;
+}
+
 .c-header {
   background-color: #2456B9;
 }
@@ -56,6 +61,114 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.nav-destop {
+  z-index: 999999;
+  position: fixed;
+  width: auto;
+  background-color: #2456B9;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav-destop .content {
+  background-color: #fff;
+  height: 100vh;
+  width: 280px;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-destop .content ul {
+  margin-top: 50vh;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.nav-destop .content ul li {
+  list-style: none;
+  color: #000;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 15px;
+  cursor: pointer;
+  color: #000;
+}
+
+.nav-destop .content ul li a {
+  color: #000;
+}
+
+.nav-destop .content ul .item {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.nav-destop .content .contact {
+  padding-left: 20px;
+}
+
+.nav-destop .content .contact div b {
+  margin-top: 5px;
+}
+
+.nav-destop .menu {
+  width: 65px;
+  height: 100%;
+  background-color: #2456B9;
+  text-align: center;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.nav-destop .menu .text {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-top: 120px;
+}
+
+.nav-destop .menu .btn {
+  width: 40px;
+  height: 60px;
+  background-size: cover;
+  background-image: url(./images/svg/icon-menu.svg);
+  margin-top: 100px;
+  margin-left: 13px;
+  cursor: pointer;
+}
+
+.nav-destop .content-menu-active {
+  -webkit-transition: ease-out 1s;
+  transition: ease-out 1s;
+  display: block;
+  -webkit-animation: showMenu 1s;
+          animation: showMenu 1s;
+}
+
+@-webkit-keyframes showMenu {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 280px;
+  }
+}
+
+@keyframes showMenu {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 280px;
+  }
 }
 
 /*section1  home*/
@@ -113,15 +226,6 @@ body {
   display: block;
   -webkit-animation: showMenu 1s;
           animation: showMenu 1s;
-}
-
-@-webkit-keyframes showMenu {
-  0% {
-    width: 0px;
-  }
-  100% {
-    width: 250px;
-  }
 }
 
 @keyframes showMenu {
@@ -280,8 +384,8 @@ body {
 }
 
 .item-3 .wrap2 .item img {
-  width: 180px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
 }
 
 .item-3 .wrap2 .item .name {
@@ -461,20 +565,30 @@ body {
   margin-left: 50px;
 }
 
-.item-1 .video-bg {
+.item-our-news {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.item-our-news .video-bg {
   width: 50%;
   height: 100%;
   position: relative;
   background-color: #000;
 }
 
-.item-1 .video-bg #myVideo {
+.item-our-news .video-bg #myVideo {
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.item-1 .video-bg .banner {
+.item-our-news .video-bg .banner {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -490,7 +604,7 @@ body {
           align-items: center;
 }
 
-.item-1 .video-bg .banner video {
+.item-our-news .video-bg .banner video {
   position: absolute;
   left: 0;
   width: 100%;
@@ -499,7 +613,7 @@ body {
      object-fit: cover;
 }
 
-.item-1 .video-bg .banner h1 {
+.item-our-news .video-bg .banner h1 {
   padding-top: 25%;
   height: 100%;
   width: 100%;
@@ -511,21 +625,21 @@ body {
   mix-blend-mode: multiply;
 }
 
-.item-1 .wrap-toolbar {
+.item-our-news .wrap-toolbar {
   width: 50%;
   height: 100%;
 }
 
-.item-1 .wrap-toolbar .toolbar-form {
+.item-our-news .wrap-toolbar .toolbar-form {
   border: solid 2px #000;
 }
 
-.item-1 .wrap-toolbar .toolbar-form label {
+.item-our-news .wrap-toolbar .toolbar-form label {
   font-weight: 800;
   font-size: 2em;
 }
 
-.item-1 .wrap-toolbar .toolbar-form .btn-search {
+.item-our-news .wrap-toolbar .toolbar-form .btn-search {
   background-color: black;
   color: #fff;
   border-radius: 20px;
@@ -533,7 +647,7 @@ body {
   padding: 10px;
 }
 
-.item-1 .wrap-toolbar .toolbar-form div .wrap-select .item {
+.item-our-news .wrap-toolbar .toolbar-form div .wrap-select .item {
   width: 23px;
   height: 25px;
   border-radius: 15px;
@@ -545,7 +659,7 @@ body {
   margin: 5px;
 }
 
-.item-1 .wrap-toolbar .toolbar-form div .wrap-select .active {
+.item-our-news .wrap-toolbar .toolbar-form div .wrap-select .active {
   background-color: #2456B9;
 }
 
@@ -698,6 +812,12 @@ body {
 }
 
 @media only screen and (max-width: 1000px) {
+  .nav-destop {
+    display: none;
+  }
+  .nav-mobile {
+    display: block;
+  }
   .item-auto-width {
     width: auto;
     -webkit-box-align: center;
@@ -805,7 +925,7 @@ body {
   }
   .item-our-news .wrap-toolbar {
     width: 100vw;
-    height: 100vh;
+    height: 500px;
   }
   .item-our-news .wrap-toolbar .toolbar-form {
     border: solid 2px #000;
@@ -839,8 +959,8 @@ body {
 
 @media only screen and (max-width: 1000px) and (min-width: 560px) {
   .item-1 .content .btn {
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
   }
   .item-2 {
     width: 100vw;
@@ -879,7 +999,7 @@ body {
   .item-3 .wrap1 .text {
     width: 100%;
     height: 100%;
-    background-color: #616161;
+    background-color: rgba(97, 97, 97, 0.466);
     padding: 30px;
     font-size: 19px;
     color: #fff;
@@ -1119,7 +1239,7 @@ body {
   .item-3 .wrap1 .text {
     width: 100%;
     height: 100%;
-    background-color: #616161;
+    background-color: rgba(97, 97, 97, 0.562);
     padding: 30px;
     font-size: 19px;
     color: #fff;
@@ -1131,12 +1251,9 @@ body {
     padding: 15px;
   }
   .item-3 .wrap2 .item {
-    background-color: #fff;
     height: 300px;
     text-align: center;
     border-left: none;
-    -webkit-box-shadow: 5px 5px 10px #d8d8d8, -5px -5px 10px #dddddd;
-            box-shadow: 5px 5px 10px #d8d8d8, -5px -5px 10px #dddddd;
   }
   .item-3 .wrap2 .item img {
     width: 180px;

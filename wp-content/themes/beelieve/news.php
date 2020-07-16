@@ -17,13 +17,48 @@
   <link rel='stylesheet' href="<?php bloginfo('template_directory') ?>/myStyle.css" type='text/css' />
   <script async defer type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=explicit'></script>
   <script async defer type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=explicit'></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script type='text/javascript'>
+    function togleMenu() {
+      let content = document.getElementById("content-menu");
+      content.classList.toggle("content-menu-active")
+    }
+  </script>
 </head>
 
 <body class="home page app-data index-data singular-data page-data page-2-data page-front-page-data front-page-data">
   <div class="main-logo" id="top">
     Beelieve
   </div>
+  <div class="nav-destop"> 
+    <div id="content-menu" class="content" >
+      <ul>
+        <li><a href="#home" class="no-transition js-scrollto" data-offset="60">Home</a></li>
+        <li href="#our_service" class="item no-transition js-scrollto" data-offset="60">Our services</li>
+        <li href="#contact" class="item no-transition js-scrollto" data-offset="60">Contact Us</li>
+        <li><a href="#">News / Events</a></li>
+        <li><a href="#">Our Work</a></li>
+      </ul>
+      <div class="contact">
+        <div class="d-flex mx-2">
+          <img src="<?php bloginfo('template_directory') ?>/images/svg/page3/iconCall.svg" width="30" height="30"/>
+          <b>028 6288 3088</b> 
+          <a style="margin-left: 80px" href="#"><img src="<?php bloginfo('template_directory') ?>/images/svg/page3/iconFB.svg" width="30" height="30"/></a>
+        </div>
+        <br/>
+        <div class="ml-2">
+          <img src="<?php bloginfo('template_directory') ?>/images/svg/page3/iconEmail.svg" width="30" height="30"/>
+          <b>hello@beelieve.vn</b>
+          <a style="margin-left: 50px" href="#"><img src="<?php bloginfo('template_directory') ?>/images/svg/page3/iconTele.svg" width="30" height="30"/></a>
+        </div>
+      </div>
+    </div>
+    <div class="menu">
+      <div class="text">Beelieve</div>
+      <div style="margin-left: 0px" class="btn" onclick="togleMenu()"></div>
+    </div>
+  </div>
+
   <div class="c-preloader">
     <div class="c-preloader_anim" data-module="Preloader">
      <center style="margin-top: 40vh;">
@@ -80,7 +115,7 @@
 
       <div class="o-scroll" data-horizontal data-module="Scroll">
         <!-- Menu -->
-        <div class="o-scroll_section c-header_wrapper">
+        <div class="nav-mobile o-scroll_section c-header_wrapper">
           <span class="c-header_trigger js-animate menu-custom" data-callback="trigger.Header()" data-repeat></span>
           <header class="c-header js-header">
             <ul class="c-header_menu">
@@ -153,8 +188,8 @@
           </header>
         </div>
         <div class="o-scroll_section">
-          <section class="c-home-intro item-1 item-our-news" id="home">
-            <div class="video-bg">
+          <section class="c-home-intro item-our-news" id="home">
+            <div class="video-bg pl-3">
               <div class="banner">
                 <video autoplay playsinline muted loop>
                   <source src="https://video.twimg.com/amplify_video/1252889741126582272/vid/676x360/wb6bkuNPqqWt68Q6.mp4?tag=13" type="video/mp4" />
@@ -184,7 +219,6 @@
           </section>
         </div>
 
-        <!-- About block -->
         <div class="o-scroll_section" id="about">
           <section class="c-block-content item-auto-width js-animate">
             <!-- Query get posts by categories -->

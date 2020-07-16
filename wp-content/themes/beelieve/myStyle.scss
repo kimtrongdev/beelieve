@@ -32,7 +32,10 @@ body{
   z-index: 9;
 }
 /*menu*/
-
+.nav-mobile{
+  display: none;
+  background-color: #2456B9;
+}
 .c-header{
   background-color: #2456B9;
 }
@@ -51,7 +54,84 @@ body{
   display: flex;
   align-items: center;
 }
-
+.nav-destop{
+  z-index: 999999;
+  position: fixed;
+  width: auto;
+  background-color: #2456B9;
+  height: 100vh;
+  display: flex;
+  .content{
+    background-color: #fff;
+    height: 100vh;
+    width: 280px;
+    display: none;
+    align-items: center;
+    ul{
+      margin-top: 50vh;
+      transform: translateY(-50%);
+      li{
+        list-style: none;
+        color:#000;
+        font-size: 22px;
+        font-weight: bold;
+        margin-top:15px;
+        cursor: pointer;
+        color: #000;
+        a{
+          color: #000;
+        }
+      }
+      .item {
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+    }
+    .contact{
+      padding-left: 20px;
+      div b{
+        margin-top: 5px;
+      }
+    }
+  }
+  .menu{
+    width: 65px;
+    height:100%;
+    background-color: #2456B9;
+    text-align: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    .text{
+      transform: rotate(-90deg);
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-top:120px
+    }
+    .btn{
+      width: 40px;
+      height: 60px;
+      background-size: cover;
+      background-image: url(./images/svg/icon-menu.svg);
+      margin-top: 100px;
+      margin-left: 13px;
+      cursor: pointer;
+    }
+  }
+  .content-menu-active{
+    transition: ease-out 1s;
+    display: block;
+    animation: showMenu 1s;
+  }
+  @keyframes showMenu {
+    0%{
+      width: 0px;
+    }
+    100%{
+      width: 280px;
+    }
+  }
+}
 /*section1  home*/
 .item-1{
   width: 100vw;
@@ -227,8 +307,8 @@ body{
       border-left: 1px solid rgb(161, 161, 161);
       padding: 5px;
       img{
-        width: 180px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
       }
       .name{
         font-size: 25px;
@@ -342,7 +422,10 @@ body{
 
 
 //news pages
-.item-1 {
+.item-our-news {
+  width: 100vw;
+  display: flex;
+  align-items: center;
   .video-bg{
     width: 50%;
     height: 100%;
@@ -540,7 +623,12 @@ animation: move-wave 3s;
 
 
 @media only screen and (max-width: 1000px) {
-
+    .nav-destop{
+      display: none;
+    }
+    .nav-mobile{
+      display: block
+    }
     .item-auto-width{
       width: auto; 
       align-items: center;
@@ -636,7 +724,7 @@ animation: move-wave 3s;
     }
     .wrap-toolbar{
       width: 100vw;
-      height: 100vh;
+      height: 500px;
       .toolbar-form{
         border: solid 2px #000;
         label{
@@ -677,7 +765,7 @@ animation: move-wave 3s;
   .item-1{
     .content{
       .btn{
-        transform: rotate(90deg);
+        transform: rotate(180deg);
       }
     }
   }
@@ -716,10 +804,11 @@ animation: move-wave 3s;
       .text{
         width: 100%;
         height: 100%;
-        background-color: rgb(97, 97, 97);
+        background-color: rgba(97, 97, 97, 0.466);
         padding: 30px;
         font-size: 19px;
-        color:#fff
+        color:#fff;
+        
       }
     }
     .wrap2{
@@ -932,7 +1021,7 @@ animation: move-wave 3s;
       .text{
         width: 100%;
         height: 100%;
-        background-color: rgb(97, 97, 97);
+        background-color: rgba(97, 97, 97, 0.562);
         padding: 30px;
         font-size: 19px;
         color:#fff
@@ -944,11 +1033,9 @@ animation: move-wave 3s;
       display: block;
       padding: 15px;
       .item{
-        background-color: #fff;
         height: 300px;
         text-align: center;
         border-left:none;
-        box-shadow: 5px 5px 10px #d8d8d8, -5px -5px 10px rgb(221, 221, 221);
         img{
           width: 180px;
           height: 120px;
